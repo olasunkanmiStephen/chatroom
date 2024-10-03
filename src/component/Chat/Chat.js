@@ -14,7 +14,7 @@ function Chat() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]); 
-  const ENDPOINT = process.env.NODE_ENV === 'production' 
+  const ENDPOINT = process.env.PORT === 'production' 
   ? 'https://chatroomserver-7qdl.onrender.com' 
   : 'http://localhost:5000';
 
