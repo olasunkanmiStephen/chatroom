@@ -14,7 +14,9 @@ function Chat() {
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [users, setUsers] = useState([]); 
-  const ENDPOINT = 'http://localhost:5000'; 
+  const ENDPOINT = process.env.NODE_ENV === 'production' 
+  ? 'https://chatroomserver-7qdl.onrender.com' 
+  : 'http://localhost:5000';
 
   useEffect(() => {
     const { name, room } = queryString.parse(window.location.search);
